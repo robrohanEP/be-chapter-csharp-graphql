@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace dnet
 {
@@ -16,7 +17,8 @@ namespace dnet
 
     public Author Find(string id)
     {
-      return null;
+      var a = _db.Find<Author>(id);
+      return a;
     }
 
     public List<Author> GetAll()

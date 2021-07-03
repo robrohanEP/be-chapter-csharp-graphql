@@ -14,16 +14,15 @@ namespace dnet
 {
   public class Startup
   {
-
     private IConfiguration Configuration { get; }
-    public Startup(IConfiguration configuration)
-    => this.Configuration = configuration;
+    public Startup(IConfiguration configuration) => this.Configuration = configuration;
 
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddDbContext<ApplicationDbContext>(
           options => options.UseSqlite(
-              Configuration.GetConnectionString("TestConnection")));
+              Configuration.GetConnectionString("TestConnection")),
+              ServiceLifetime.Singleton);
 
       services.AddScoped<IAuthorRepository, AuthorRepository>();
 
@@ -42,17 +41,20 @@ namespace dnet
                 }
 
                 type Author {
-                    name: String
+                  id: String!
+                  name: String!
                 }
             ")
             .BindComplexType<Query>()
             .BindComplexType<Book>()
-            .BindComplexType<Author>();
+            .BindComplexType<Author>()
+            // Tell me the errors!
+            .ModifyRequestOptions(opt => opt.IncludeExceptionDetails = true);
       // .AddQueryType<Query>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider provider)
     {
       // Add the graphql end point responders
       app

@@ -6,6 +6,15 @@ namespace dnet
   /// in the same way we defined our models.
   public class Query
   {
+
+    private IAuthorRepository _author;
+
+    public Query(IAuthorRepository author)
+    {
+      _author = author;
+    }
+
+
     public Book GetBook() =>
         new Book
         {
@@ -17,9 +26,11 @@ namespace dnet
         };
 
     public Author GetAuthor() =>
-      new Author
-      {
-        Name = "Rob"
-      };
+      _author.Find("1");
+    // new Author
+    // {
+    //   Id = "1224",
+    //   Name = "Rob"
+    // };
   }
 }
