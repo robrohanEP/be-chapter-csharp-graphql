@@ -25,6 +25,8 @@ namespace dnet
           options => options.UseSqlite(
               Configuration.GetConnectionString("TestConnection")));
 
+      services.AddScoped<IAuthorRepository, AuthorRepository>();
+
       // Add the GraphQL schema to the service configuration
       services
           .AddGraphQLServer()
