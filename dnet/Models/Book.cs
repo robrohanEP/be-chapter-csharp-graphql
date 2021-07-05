@@ -4,14 +4,13 @@ namespace dnet
 {
   public class Book
   {
-
     [Key]
-    public string Id { get; set; }
+    public int Id { get; set; }
 
     [Required]
     [StringLength(200)]
     public string Title { get; set; }
 
-    public Author Author { get; set; }
+    public decimal Price { get; set; }
   }
 }

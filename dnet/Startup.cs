@@ -1,12 +1,7 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,6 +20,7 @@ namespace dnet
               ServiceLifetime.Singleton);
 
       services.AddScoped<IAuthorRepository, AuthorRepository>();
+      services.AddScoped<IBookRepository, BookRepository>();
 
       // Add the GraphQL schema to the service configuration
       services
@@ -38,12 +34,12 @@ namespace dnet
                   book: Book
                   author: Author
                   authors: [Author]
-                  getAuthorById(id: ID!): Author
+                  # getAuthorById(id: ID!): Author
                 }
 
                 type Book {
                   title: String
-                  author: Author
+                  # author: Author
                 }
 
                 type Author {

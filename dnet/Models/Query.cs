@@ -1,5 +1,6 @@
 using System.Linq;
 using HotChocolate;
+using HotChocolate.Types;
 // using ConferencePlanner.GraphQL.Data;
 
 namespace dnet
@@ -10,7 +11,8 @@ namespace dnet
   /// in the same way we defined our models.
   public class Query
   {
-    private IAuthorRepository _author;
+    private readonly IAuthorRepository _author;
+    private readonly IBookRepository _book;
 
     public IQueryable<Author> GetAuthors([Service] ApplicationDbContext context) =>
                 context.Authors;
@@ -21,20 +23,26 @@ namespace dnet
                 context.Authors.Find(id);
 
 
-    public Query(IAuthorRepository author)
+    public Query(IAuthorRepository author, IBookRepository book)
     {
       _author = author;
+      _book = book;
     }
 
+    public IQueryable<Book> Books => (IQueryable<Book>)_book.GetAll();
+
     public Book GetBook() =>
-        new Book
-        {
-          Title = "C# in depth.",
-          Author = new Author
-          {
-            Name = "Jon Skeet"
-          }
-        };
+      _book.Find("1");
+
+    // public Book GetBook() =>
+    //     new Book
+    //     {
+    //       Title = "C# in depth.",
+    //       Author = new Author
+    //       {
+    //         Name = "Jon Skeet"
+    //       }
+    //     };
 
     public Author GetAuthor() =>
       _author.Find("1");
