@@ -30,9 +30,15 @@ namespace dnet
       services
           .AddGraphQLServer()
           .AddDocumentFromString(@"
+                #type Mutation {
+                #  addAuthor(input: Author): Author
+                #}
+
                 type Query {
                   book: Book
                   author: Author
+                  authors: [Author]
+                  getAuthorById(id: ID!): Author
                 }
 
                 type Book {
@@ -46,11 +52,13 @@ namespace dnet
                 }
             ")
             .BindComplexType<Query>()
+            // .AddQueryType<Query>()
             .BindComplexType<Book>()
             .BindComplexType<Author>()
+            // .BindComplexType<Mutation>()
+            .AddMutationType<Mutation>()
             // Tell me the errors!
             .ModifyRequestOptions(opt => opt.IncludeExceptionDetails = true);
-      // .AddQueryType<Query>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
