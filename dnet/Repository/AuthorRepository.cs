@@ -21,9 +21,9 @@ namespace dnet
       return a;
     }
 
-    public List<Author> GetAll()
+    public Microsoft.EntityFrameworkCore.DbSet<Author> GetAll()
     {
-      return null;
+      return _db.Authors;
     }
 
     public Author Add(Author author)

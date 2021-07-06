@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace dnet
 {
@@ -8,7 +9,7 @@ namespace dnet
   {
     Book Find(string id);
 
-    List<Book> GetAll();
+    Microsoft.EntityFrameworkCore.DbSet<Book> GetAll();
 
     Book Add(Book book);
 

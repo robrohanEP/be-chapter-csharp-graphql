@@ -5,7 +5,7 @@ namespace dnet
   public class Book
   {
     [Key]
-    public int Id { get; set; }
+    public string Id { get; set; }
 
     [Required]
     [StringLength(200)]

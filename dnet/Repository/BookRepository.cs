@@ -21,7 +21,7 @@ namespace dnet
       return a;
     }
 
-    public List<Book> GetAll()
+    public Microsoft.EntityFrameworkCore.DbSet<Book> GetAll()
     {
       return null;
     }

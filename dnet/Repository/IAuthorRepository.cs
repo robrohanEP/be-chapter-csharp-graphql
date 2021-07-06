@@ -8,7 +8,7 @@ namespace dnet
   {
     Author Find(string id);
 
-    List<Author> GetAll();
+    Microsoft.EntityFrameworkCore.DbSet<Author> GetAll();
 
     Author Add(Author author);
 
