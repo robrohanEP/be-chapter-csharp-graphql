@@ -1,0 +1,7 @@
+
+
+###
+POST http://localhost:5000/graphql/
+Content-Type: application/json
+
+{"query": "{ authors { name id } }"}

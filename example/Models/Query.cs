@@ -3,7 +3,7 @@ using HotChocolate;
 using HotChocolate.Types;
 // using ConferencePlanner.GraphQL.Data;
 
-namespace dnet
+namespace example
 {
   /// We have a nice and simple model that we can use to build our GraphQL schema.
   /// We now need to define a query root type. The query root type exposes all the

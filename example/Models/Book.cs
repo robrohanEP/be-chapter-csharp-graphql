@@ -1,15 +1,16 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace dnet
+namespace example
 {
-  public class Author
+  public class Book
   {
     [Key]
     public string Id { get; set; }
 
     [Required]
     [StringLength(200)]
-    public string Name { get; set; }
+    public string Title { get; set; }
+
+    public decimal Price { get; set; }
   }
 }
-

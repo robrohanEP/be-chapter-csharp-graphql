@@ -1,9 +1,9 @@
 using System.Threading.Tasks;
 using HotChocolate;
 
-namespace dnet
+namespace example
 {
-  /// For mutations we are using the "relay mutation pattern" which is 
+  /// For mutations we are using the "relay mutation pattern" which is
   // /// commonly used in GraphQL.
   // public class AddAuthorPayload
   // {
@@ -14,7 +14,7 @@ namespace dnet
   //   public Author Author { get; }
   // }
 
-  /// 
+  ///
   public class Mutation
   {
     public async Task<Author> AddAuthor(

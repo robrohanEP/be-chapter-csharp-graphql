@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using dnet;
+using example;
 
 public class ApplicationDbContext : DbContext
 {

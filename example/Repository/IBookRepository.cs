@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace dnet
+namespace example
 {
   public interface IBookRepository
   {
