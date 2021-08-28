@@ -1,3 +1,9 @@
+####
+# This is a makefile that shows the commands to build a simple C#
+# app that uses sqlite3, hotchocolate, and docker to create a
+# simple API that you can query against by going to:
+# http://localhost:5000/graphql
+####
 PROJECT=example
 # osx.10.11-x64
 RUNTIME=linux-x64
@@ -5,7 +11,6 @@ FRAMEWORK=net5.0
 CONFIG=Release
 # /$(CONFIG)/$(FRAMEWORK)/$(RUNTIME)/$(PROJECT)
 BIN?=bin
-
 
 HASH = $(shell git log --pretty=format:'%h' -n 1)
 
@@ -25,8 +30,6 @@ usage:
 pre-install:
 
 install:
-# dotnet add ./dnet package HotChocolate.AspNetCore
-# Install all  libraries
 	dotnet restore --force-evaluate
 
 start:

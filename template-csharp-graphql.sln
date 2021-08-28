@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "example", "example\example.csproj", "{23682EDA-01CE-4501-A3F8-B87122020174}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "fsharp", "fsharp", "{9C8E319A-4DBC-4F7D-A1CA-B5108F62FE40}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "App", "fsharp\App\App.fsproj", "{25725129-F7E4-4CAC-BD8E-C10DF047CDD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,20 @@ Global
 		{23682EDA-01CE-4501-A3F8-B87122020174}.Release|x64.Build.0 = Release|Any CPU
 		{23682EDA-01CE-4501-A3F8-B87122020174}.Release|x86.ActiveCfg = Release|Any CPU
 		{23682EDA-01CE-4501-A3F8-B87122020174}.Release|x86.Build.0 = Release|Any CPU
+		{25725129-F7E4-4CAC-BD8E-C10DF047CDD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25725129-F7E4-4CAC-BD8E-C10DF047CDD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25725129-F7E4-4CAC-BD8E-C10DF047CDD9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{25725129-F7E4-4CAC-BD8E-C10DF047CDD9}.Debug|x64.Build.0 = Debug|Any CPU
+		{25725129-F7E4-4CAC-BD8E-C10DF047CDD9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{25725129-F7E4-4CAC-BD8E-C10DF047CDD9}.Debug|x86.Build.0 = Debug|Any CPU
+		{25725129-F7E4-4CAC-BD8E-C10DF047CDD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25725129-F7E4-4CAC-BD8E-C10DF047CDD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25725129-F7E4-4CAC-BD8E-C10DF047CDD9}.Release|x64.ActiveCfg = Release|Any CPU
+		{25725129-F7E4-4CAC-BD8E-C10DF047CDD9}.Release|x64.Build.0 = Release|Any CPU
+		{25725129-F7E4-4CAC-BD8E-C10DF047CDD9}.Release|x86.ActiveCfg = Release|Any CPU
+		{25725129-F7E4-4CAC-BD8E-C10DF047CDD9}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{25725129-F7E4-4CAC-BD8E-C10DF047CDD9} = {9C8E319A-4DBC-4F7D-A1CA-B5108F62FE40}
 	EndGlobalSection
 EndGlobal
