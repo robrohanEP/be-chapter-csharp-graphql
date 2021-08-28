@@ -3,7 +3,11 @@ PROJECT=example
 RUNTIME=linux-x64
 FRAMEWORK=net5.0
 CONFIG=Release
-BIN?=bin/$(CONFIG)/$(FRAMEWORK)/$(RUNTIME)/$(PROJECT)
+# /$(CONFIG)/$(FRAMEWORK)/$(RUNTIME)/$(PROJECT)
+BIN?=bin
+
+
+HASH = $(shell git log --pretty=format:'%h' -n 1)
 
 usage:
 	@echo "Hello! Cat the Makefile."
@@ -53,3 +57,9 @@ migration_init:
 # dotnet ef migrations add ...
 # dotnet ef migrations remove ...
 # dotnet ef database update
+
+dockerize: build
+	docker build -t $(PROJECT)-$(HASH) -f Dockerfile .
+
+docker_run:
+	docker run -it -p 5000:80 --rm $(PROJECT)-$(HASH)

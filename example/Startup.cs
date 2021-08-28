@@ -21,6 +21,13 @@ namespace example
 
       services.AddScoped<IAuthorRepository, AuthorRepository>();
       services.AddScoped<IBookRepository, BookRepository>();
+      services.AddScoped<Query>();
+      services.AddScoped<Mutation>();
+
+      // services.AddGraphQL(c => SchemaBuilder.New().AddServices(c).AddType<GraphQLTypes>()  
+      //                                                                   .AddQueryType<Query>()  
+      //                                                                   .AddMutationType<Mutuation>()  
+      //                                                                    .Create());  
 
       // Add the GraphQL schema to the service configuration
       services
